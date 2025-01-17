@@ -1,0 +1,182 @@
+/* 設置 body 和 html 的通用樣式 */
+html,
+body {
+    padding: 0; /* 移除默認的內邊距 */
+    margin: 0; /* 移除默認的外邊距 */
+    width: 100%; /* 設置寬度為 100% */
+    height: 100vh; /* 設置高度為 100% 的視口高度 */
+    position: relative; /* 允許在 body 中進行絕對定位 */
+    overflow: hidden; /* 防止內容溢出視口 */
+    background-color: #000030; /* 設置背景顏色為深藍色 */
+    background-image: url("https://images.unsplash.com/photo-1536152470836-b943b246224c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"); /* 設置背景圖片 */
+    background-size: cover; /* 使背景圖片覆蓋整個頁面 */
+    background-position: center; /* 背景圖片居中 */
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* 固定在視口底部的頁腳 */
+body > footer {
+    position: sticky; /* 設置為粘性定位 */
+    top: 100vh; /* 將頁腳放置在視口的底部 */
+}
+
+.bi-heart {
+    color: red;
+}
+
+.btn:hover {
+    /* :hover 代表滑鼠移到元素上時的狀態 */
+    transform: scale(1.05);
+}
+
+.btn:active {
+    /* :active是滑鼠點擊元素的狀態 */
+    transform: scale(1);
+    box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* 設置內容居中對齊 */
+.center {
+    text-align: center; /* 文字居中對齊 */
+}
+
+/* 預設隱藏下拉菜單 */
+.dropdown-menu {
+    display: none; /* 隱藏下拉菜單 */
+}
+
+/* 當下拉菜單被懸停時顯示 */
+.dropdown:hover .dropdown-menu {
+    display: block; /* 顯示下拉菜單 */
+}
+
+/* 隱藏下拉菜單按鈕上的箭頭 */
+.nav-link.dropdown-toggle::after {
+    display: none; /* 隱藏箭頭 */
+}
+
+/* 旋轉木馬項目的樣式 */
+.carousel-item {
+    width: 100%; /* 旋轉木馬項目寬度 100% */
+    height: 500px !important; /* 設置高度為 500px */
+}
+
+/* 旋轉木馬圖片的樣式 */
+.carousel-item img {
+    position: absolute; /* 設置圖片為絕對定位 */
+    top: -9999px; /* 將圖片移動到視口外 */
+    bottom: -9999px; /* 將圖片移動到視口外 */
+    left: -9999px; /* 將圖片移動到視口外 */
+    right: -9999px; /* 將圖片移動到視口外 */
+    margin: auto; /* 使圖片居中 */
+    height: 100%; /* 設置圖片高度為 100% */
+}
+
+/* 頁腳的樣式 */
+.footer {
+    text-align: center; /* 文字居中對齊 */
+    margin-top: 3rem; /* 頁腳上方添加 3rem 的間距 */
+    color: white; /* 設置文字顏色為白色 */
+}
+
+/* 頁腳中鏈接的樣式 */
+.footer a {
+    color: blue; /* 設置鏈接顏色為藍色 */
+}
+
+/* 主頁面內容層的 z-index 設置 */
+.mainPage {
+    z-index: 1; /* 設置主頁面層的 z-index 層級 */
+}
+
+/* 容器的基本樣式 */
+.container {
+    max-width: 960px; /* 設置容器的最大寬度為 960px */
+}
+
+div.container {
+    width: 100%; /* 設置容器的寬度為 100% */
+}
+.form-signin {
+    width: 100%;
+    min-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+/* 基本的文字底線效果 */
+.nav-link,
+.dropdown-toggle {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* 為底線創建動畫效果 */
+.nav-link::after,
+.dropdown-toggle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: black; /* 底線顏色 */
+    transition: all 0.3s ease; /* 平滑過渡 */
+    transform: translateX(-50%);
+}
+
+/* 滑鼠懸停時底線展開 */
+.nav-link:hover::after,
+.dropdown-toggle:hover::after {
+    width: 100%;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #74ebd5;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .login-container {
+        padding: 1.5rem;
+    }
+}
